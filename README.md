@@ -17,7 +17,9 @@ Setup And execution:
 7. Continue the conversation in the shell
 
 Scope of the Bot:
+
 This bot shows the list of restaurants in a locality when the location and cuisine is provided in the conversation.
+
 The bot supports the following actions by the user in the conversation:
 
 1. Greet - Mood Great - Provide location -  Provide cuisine
@@ -35,7 +37,7 @@ The bot supports the following actions by the user in the conversation:
 13. Provide location - Provide cuisine
 14. Greet - Bye
 
-(P.S - the above mentioned are the actions of the user and the bot responds to these actions accordingly)
+(P.S - The above mentioned points are the actions of the user. The bot responds to these actions of the user.)
 
 Sample conversation between bot and user for the first action mentioned above:
 1. User - Hi
