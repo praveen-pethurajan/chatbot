@@ -34,6 +34,7 @@ The bot supports the following actions by the user in the conversation:
 12. Greet - Mood Great - Ask for restaurants near me - Provide location - Provide cuisine
 13. Provide location - Provide cuisine
 14. Greet - Bye
+
 (P.S - the above mentioned are the actions of the user and the bot responds to these actions accordingly)
 
 Sample conversation between bot and user for the first action mentioned above:
