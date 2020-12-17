@@ -2,7 +2,7 @@ version: "2.0"
 
 stories:
 
-- story: restaurantSearch_tellingLocation_tellingCuisine
+- story: 1greet_mood_great_tellingLocation_tellingCuisine
   steps:
   - intent: greet
   - action: utter_greet
@@ -19,4 +19,187 @@ stories:
   - slot_was_set:
     - cuisine: chinese
   - action: action_show_restaurants
+  - action: utter_goodbye
+
+- story: 2greet_mood_great_tellingLocationCuisine_bye
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_ask_location
+  - intent: telling_location_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: action_show_restaurants
+  - action: utter_goodbye
+- story: 3restaurantSearch_tellingLocation_tellingCuisine
+  steps:
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: telling_location
+  - action: action_set_location
+  - slot_was_set:
+    - location: Mumbai
+  - action: utter_ask_cuisine
+  - intent: telling_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: action_show_restaurants
+  - action: utter_goodbye
+- story: 4tellingLocationCuisine
+  steps:
+  - intent: telling_location_cuisine
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: action_show_restaurants
+  - action: utter_goodbye
+- story: 5greet_restaurantSearch_tellingLocation_denyLocation_tellingCuisine
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_ask_location
+  - intent: deny
+  - action: utter_location_denied
+  - intent: telling_location
+  - action: action_set_location
+  - slot_was_set:
+    - location: Hyderabad
+  - action: utter_ask_cuisine
+  - intent: telling_cuisine
+    entities:
+    - cuisine: chinese
+  - action: action_show_restaurants
+  - action: utter_goodbye
+- story: 6restaurantSearch_denyLocation_tellingLocation_tellingCuisine
+  steps:
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: deny
+  - action: utter_location_denied
+  - intent: telling_location
+  - action: action_set_location
+  - slot_was_set:
+    - location: Mumbai
+  - action: utter_ask_cuisine
+  - intent: telling_cuisine
+    entities:
+    - cuisine: south indian
+  - slot_was_set:
+    - cuisine: south indian
+  - action: action_show_restaurants
+  - action: utter_goodbye
+- story: 7greet_restaurantSearch_tellingLocation_denyCuisine_showRestaurantsWithoutCuisine
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_ask_location
+  - intent: telling_location
+  - action: action_set_location
+  - slot_was_set:
+    - location: Punjab
+  - action: utter_ask_cuisine
+  - intent: deny
+  - action: utter_itsok
+  - action: action_restaurants_nocuisine
+  - action: utter_goodbye
+- story: 8greet_restaurantSearch_denyLocation_denyLocation_bye
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_ask_location
+  - intent: deny
+  - action: utter_location_denied
+  - intent: deny
+  - action: utter_tryAfter_sometime
+  - action: utter_goodbye
+- story: 9tellingCuisine_tellingLocation_showRestaurants
+  steps:
+  - intent: telling_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_affirm_cuisine
+  - action: utter_ask_location
+  - intent: telling_location
+  - action: action_set_location
+  - slot_was_set:
+    - location: Hyderabad
+  - action: action_show_restaurants
+  - action: utter_goodbye
+- story: 10greet_restaurantSearch_tellingLocation_tellingCuisine
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: telling_location
+  - action: action_set_location
+  - slot_was_set:
+    - location: Hyderabad
+  - action: utter_ask_cuisine
+  - intent: telling_cuisine
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: action_show_restaurants
+  - action: utter_goodbye
+- story: 11greet_telling_location_cuisine_affirm_goodbye
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: telling_location_cuisine
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: action_show_restaurants
+  - action: utter_goodbye
+- story: 12greet_mood_great_restaurantSearch_tellingLocation_tellingCuisine
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_ask_location
+  - intent: telling_location
+  - action: action_set_location
+  - slot_was_set:
+    - location: Hyderabad
+  - action: utter_ask_cuisine
+  - intent: telling_cuisine
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: action_show_restaurants
+  - action: utter_goodbye
+- story: 13tellingLocation_tellingCuisine
+  steps:
+  - intent: telling_location
+  - action: action_set_location
+  - slot_was_set:
+    - location: Mumbai
+  - action: utter_ask_cuisine
+  - intent: telling_cuisine
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: action_show_restaurants
+  - action: utter_goodbye
+- story: 14greet_deny_bye
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: deny
   - action: utter_goodbye
